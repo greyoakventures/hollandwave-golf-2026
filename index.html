@@ -473,7 +473,7 @@
     padding: 22px;
     border-radius: 12px;
     max-width: 620px;
-    margin: 0 auto 40px;
+    margin: 0 auto 24px;
   }
   .presented-eyebrow {
     font-size: 11px; letter-spacing: 0.16em; color: var(--gold-deep);
@@ -482,6 +482,47 @@
   .presented-name {
     font-family: 'Anton', sans-serif; font-size: 24px; color: var(--navy);
     letter-spacing: 0.01em;
+  }
+
+  /* --- CONFIRMED SPONSORS THANK-YOU --- */
+  .thanks {
+    max-width: 820px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  .thanks-title {
+    font-size: 12px; letter-spacing: 0.18em; color: var(--gold-deep);
+    text-transform: uppercase; font-weight: 800;
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 18px;
+  }
+  .thanks-title::before,
+  .thanks-title::after {
+    content: ''; display: block; width: 42px; height: 1px; background: var(--gold);
+  }
+  .thanks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 640px) {
+    .thanks-grid { grid-template-columns: 1fr; }
+  }
+  .thanks-card {
+    background: #fff;
+    border: 1px solid var(--hair);
+    border-top: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .thanks-role {
+    font-size: 10px; letter-spacing: 0.14em; color: var(--gold-deep);
+    text-transform: uppercase; font-weight: 800; margin-bottom: 6px;
+  }
+  .thanks-name {
+    font-family: 'Anton', sans-serif; font-size: 18px; color: var(--navy);
+    line-height: 1.15;
   }
 
   /* --- FINAL CTA BAND --- */
@@ -732,10 +773,25 @@
   <h2>Partner with the <span class="gold">Wave</span></h2>
   <p class="section-lede">Reach hundreds of West Michigan families and support Christian character through sport. Sponsorships are 501(c)(3) tax-deductible.</p>
 
-  <div class="presented">
-    <div class="presented-eyebrow">Event Sponsor — Presented By</div>
-    <div class="presented-name">Gordon and Prince Family Dentistry</div>
+  <div class="thanks">
+    <div class="thanks-title">Thank You to Our Confirmed Sponsors</div>
+    <div class="thanks-grid">
+      <div class="thanks-card">
+        <div class="thanks-role">Event Sponsor</div>
+        <div class="thanks-name">Gordon and Prince<br>Family Dentistry</div>
+      </div>
+      <div class="thanks-card">
+        <div class="thanks-role">Lunch Sponsor</div>
+        <div class="thanks-name">Peerbolt's Inc.</div>
+      </div>
+      <div class="thanks-card">
+        <div class="thanks-role">Beverage Cart Sponsor</div>
+        <div class="thanks-name">Crown Motors</div>
+      </div>
+    </div>
   </div>
+
+  <p class="section-lede" style="margin-top:32px;font-size:15px;">Sponsorship opportunities still available:</p>
 
   <div class="tiers">
     <div class="tier">
@@ -744,20 +800,6 @@
         <div class="tier-desc">Logo on all 36 carts • Top billing</div>
       </div>
       <div class="tier-price">$2,000</div>
-    </div>
-    <div class="tier">
-      <div>
-        <div class="tier-name">Lunch Sponsor</div>
-        <div class="tier-desc">Signage at lunch • Recognition from podium</div>
-      </div>
-      <div class="tier-price">$1,000</div>
-    </div>
-    <div class="tier">
-      <div>
-        <div class="tier-name">Beverage Cart</div>
-        <div class="tier-desc">Logo on beverage cart • Day-of mentions</div>
-      </div>
-      <div class="tier-price">$500</div>
     </div>
     <div class="tier">
       <div>
