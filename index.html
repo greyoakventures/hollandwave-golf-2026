@@ -526,6 +526,67 @@
   @media (min-width: 720px) { .sticky-cta { display: none; } }
   body { padding-bottom: 82px; }
   @media (min-width: 720px) { body { padding-bottom: 0; } }
+
+  /* --- MEET THE WAVE PHOTO STRIP --- */
+  .meet {
+    background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+    padding: 56px 24px 64px;
+    text-align: center;
+  }
+  .meet-eyebrow {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.24em;
+    font-size: 14px;
+    color: var(--fairway);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .meet h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    color: var(--navy-deep);
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+  .meet-sub {
+    color: var(--navy);
+    opacity: 0.75;
+    font-size: 15px;
+    margin: 0 0 32px;
+  }
+  .meet-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (min-width: 720px) {
+    .meet-grid { grid-template-columns: 1.15fr 1fr 1fr; gap: 18px; }
+  }
+  .meet-photo {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 8px 24px rgba(10, 42, 77, 0.18);
+    border: 3px solid #fff;
+    outline: 1px solid rgba(10, 42, 77, 0.08);
+  }
+  .meet-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .meet-photo:hover img { transform: scale(1.03); }
+  .meet-caption {
+    margin-top: 22px;
+    font-size: 14px;
+    color: var(--navy);
+    opacity: 0.7;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -632,6 +693,27 @@
     <p>Boys teams have run since 2014, and we're bringing girls basketball back for the 2026 season. Every dollar raised lowers athlete fees and funds coaches, uniforms, and tournament travel.</p>
     <p><strong>This one day funds a full year of homeschool basketball for boys and girls.</strong></p>
   </div>
+</section>
+
+<!-- ============ MEET THE WAVE ============ -->
+<section class="meet">
+  <div class="meet-eyebrow">Meet the Wave</div>
+  <h3>Real teams. Real families. Real impact.</h3>
+  <p class="meet-sub">Every dollar you give lands right here — with these kids, on these courts.</p>
+
+  <div class="meet-grid">
+    <div class="meet-photo">
+      <img src="photos/team_trophy.jpg" alt="Holland Wave high school boys basketball team with tournament trophy" loading="lazy" />
+    </div>
+    <div class="meet-photo">
+      <img src="photos/team_youth.jpg" alt="Holland Wave youth boys basketball team with coaches" loading="lazy" />
+    </div>
+    <div class="meet-photo">
+      <img src="photos/action.jpg" alt="Holland Wave player driving the ball during a game" loading="lazy" />
+    </div>
+  </div>
+
+  <p class="meet-caption">10+ years of West Michigan homeschool basketball — boys since 2014, girls returning in 2026.</p>
 </section>
 
 <!-- ============ SPONSOR ============ -->
