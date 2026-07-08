@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Holland Wave Golf Outing 2026 — Aug 27 at Pigeon Creek</title>
+<meta name="description" content="Join Holland Wave's 2026 golf fundraiser on Thursday, August 27 at Pigeon Creek Golf Course. Support homeschool basketball — boys and girls. Register your foursome or become a sponsor." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Holland Wave Golf Outing 2026 — Aug 27" />
+<meta property="og:description" content="Join our 2026 golf fundraiser at Pigeon Creek Golf Course. 4-person scramble, $400/team. Supporting Holland Wave homeschool basketball — boys and girls." />
+<meta property="og:image" content="og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0E3A66;
+    --navy-deep: #0A2A4D;
+    --wave: #5BBDE7;
+    --fairway: #2D6A3E;
+    --fairway-lt: #3f8a54;
+    --gold: #F2B441;
+    --gold-deep: #C99419;
+    --cream: #F8F4EB;
+    --ink: #0F1A2A;
+    --muted: #6E829C;
+    --hair: #E7EAF0;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .display { font-family: 'Anton', 'Inter', sans-serif; letter-spacing: 0.01em; }
+  a { color: var(--navy); }
+  img { max-width: 100%; display: block; }
+
+  /* --- COUNTDOWN BAR --- */
+  .countdown-bar {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2b1a04 100%);
+    color: #fff;
+    padding: 14px 16px 16px;
+    text-align: center;
+    border-top: 6px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    position: relative;
+  }
+  .countdown-msg {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .countdown-msg .pulse {
+    display: inline-block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #ff5c5c;
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 1.4s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.35); }
+  }
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .countdown-unit {
+    background: rgba(242, 180, 65, 0.10);
+    border: 1px solid rgba(242, 180, 65, 0.35);
+    border-radius: 8px;
+    padding: 8px 10px 6px;
+    min-width: 68px;
+  }
+  @media (min-width: 640px) {
+    .countdown-unit { min-width: 84px; padding: 10px 14px 8px; }
+  }
+  .countdown-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (min-width: 640px) { .countdown-num { font-size: 42px; } }
+  .countdown-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  @media (min-width: 640px) { .countdown-label { font-size: 10px; } }
+  .countdown-tagline {
+    font-size: 13px;
+    color: #e0d3b8;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  .countdown-tagline strong { color: var(--gold); }
+  .countdown-closed {
+    display: none;
+    padding: 8px 0;
+  }
+  .countdown-closed .badge {
+    display: inline-block;
+    background: #b83232;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .countdown-closed .msg {
+    color: #e0d3b8;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .countdown-closed .msg a { color: var(--gold); text-decoration: none; font-weight: 700; }
+  body.deadline-passed .countdown-timer,
+  body.deadline-passed .countdown-tagline,
+  body.deadline-passed .countdown-msg { display: none; }
+  body.deadline-passed .countdown-closed { display: block; }
+
+  /* --- HERO --- */
+  .hero {
+    background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 55%, #123a70 100%);
+    color: #fff;
+    padding: 28px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; left:0; right:0; bottom: -1px; height: 60px;
+    background: linear-gradient(180deg, rgba(91,189,231,0) 0%, rgba(91,189,231,0.18) 100%);
+    pointer-events: none;
+  }
+  .lockup {
+    max-width: 280px; margin: 8px auto 20px;
+  }
+  .lockup img { width: 100%; height: auto; display: block; }
+  .kicker {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4.5vw, 44px);
+    letter-spacing: 0.18em;
+    color: var(--wave-blue);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 24px auto 4px;
+    line-height: 1;
+  }
+  .kicker .wave-emoji { letter-spacing: 0; margin-left: 4px; }
+  .eyebrow-pill {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .event-meta {
+    color: var(--wave);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .h1 {
+    font-size: clamp(48px, 10vw, 96px);
+    line-height: 0.95;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .h1 .gold { color: var(--gold); }
+  .h-sub {
+    font-size: clamp(15px, 3.4vw, 20px);
+    font-weight: 600;
+    color: var(--wave);
+    margin-top: 14px;
+    margin-bottom: 4px;
+  }
+  .scripture {
+    font-size: 15px;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+
+  /* --- HERO CTA BUTTONS --- */
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .cta-row { flex-direction: row; }
+    .cta-row .btn { flex: 1; }
+  }
+  .btn {
+    display: block;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: transform .1s ease, box-shadow .15s ease, background .15s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.28); }
+  .btn:active { transform: translateY(0); }
+  .btn-gold { background: var(--gold); color: var(--navy-deep); }
+  .btn-gold:hover { background: #ffc85a; }
+  .btn-green { background: var(--fairway); color: #fff; }
+  .btn-green:hover { background: var(--fairway-lt); }
+  .btn-outline {
+    background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35);
+    box-shadow: none;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+  .btn small { display: block; font-weight: 500; font-size: 12px; opacity: 0.85; text-transform: none; margin-top: 3px; }
+
+  .urgency-pill {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 10px 18px;
+    background: rgba(242, 180, 65, 0.14);
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* --- SECTIONS --- */
+  .section {
+    padding: 56px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-tight { padding: 40px 24px; }
+  .section h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 6vw, 48px);
+    color: var(--navy);
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .section h2 .gold { color: var(--gold-deep); }
+  .section-lede {
+    text-align: center;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 36px;
+  }
+
+  /* --- STATS CARD --- */
+  .stats {
+    background: #fff;
+    border: 2px solid var(--navy);
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    max-width: 720px;
+    margin: -20px 20px 0;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 12px 32px rgba(14, 58, 102, 0.12);
+  }
+  @media (min-width: 760px) { .stats { margin-left: auto; margin-right: auto; } }
+  @media (min-width: 640px) {
+    .stats { grid-template-columns: 1fr 1fr 1fr; }
+    .stat + .stat {
+      border-left: 1px solid var(--hair);
+      border-top: none;
+      padding-left: 20px;
+      padding-top: 0;
+    }
+  }
+  .stat { text-align: center; padding: 14px 8px; }
+  .stat + .stat { border-top: 1px solid var(--hair); padding-top: 20px; margin-top: 12px; }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .stat-val {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-val.green { color: var(--fairway); }
+  .stat-sub { font-size: 13px; color: var(--muted); }
+
+  /* --- INCLUDES --- */
+  .includes {
+    background: #fff;
+    padding: 42px 28px;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid var(--hair);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .includes h3 {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .includes-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(24px, 4.5vw, 34px);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .includes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 26px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) { .includes-grid { grid-template-columns: repeat(4, 1fr); } }
+  .include-item {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .include-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--cream); color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .include-label {
+    font-weight: 700; color: var(--navy); font-size: 14px;
+  }
+
+  /* --- WHY WE PLAY --- */
+  .why {
+    background: linear-gradient(140deg, #fff 0%, var(--cream) 100%);
+    border-left: 6px solid var(--wave);
+    padding: 32px 30px;
+    border-radius: 12px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .why h3 {
+    font-size: 12px; letter-spacing: 0.14em; color: var(--wave); text-transform: uppercase;
+    margin-bottom: 8px; font-weight: 800;
+  }
+  .why-title {
+    font-family: 'Anton', sans-serif; font-size: clamp(26px, 5vw, 36px);
+    color: var(--navy); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .why p { color: var(--ink); font-size: 16px; }
+  .why p + p { margin-top: 10px; }
+
+  /* --- SPONSOR TIERS --- */
+  .tiers {
+    background: #fff;
+    border: 2px solid var(--navy);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .tier {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--hair);
+    gap: 12px;
+  }
+  .tier:last-child { border-bottom: none; }
+  .tier:nth-child(even) { background: var(--cream); }
+  .tier-name {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 17px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .tier-name::before {
+    content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+    display: inline-block; flex-shrink: 0;
+  }
+  .tier-desc {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 2px;
+    padding-left: 22px;
+  }
+  .tier-price {
+    background: var(--fairway);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    min-width: 96px;
+    text-align: center;
+  }
+  .tax-line {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 18px;
+    padding: 0 12px;
+  }
+
+  /* --- PRESENTED BY --- */
+  .presented {
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--hair);
+    padding: 22px;
+    border-radius: 12px;
+    max-width: 620px;
+    margin: 0 auto 40px;
+  }
+  .presented-eyebrow {
+    font-size: 11px; letter-spacing: 0.16em; color: var(--gold-deep);
+    text-transform: uppercase; font-weight: 800; margin-bottom: 4px;
+  }
+  .presented-name {
+    font-family: 'Anton', sans-serif; font-size: 24px; color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+
+  /* --- FINAL CTA BAND --- */
+  .final-cta {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 56px 24px;
+    text-align: center;
+    border-top: 6px solid var(--gold);
+  }
+  .final-cta h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 7vw, 56px);
+    color: #fff;
+    letter-spacing: 0.01em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .final-cta p {
+    color: var(--wave); margin-bottom: 28px; font-size: 17px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    background: #061a30;
+    color: #b8c8de;
+    padding: 30px 24px;
+    text-align: center;
+    font-size: 14px;
+  }
+  footer a { color: var(--wave); text-decoration: none; }
+  footer .contact-row { margin-bottom: 8px; }
+  footer strong { color: #fff; }
+
+  /* --- FLOATING STICKY CTA (mobile) --- */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--hair);
+    padding: 10px 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 50;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  }
+  .sticky-cta .btn {
+    flex: 1;
+    padding: 14px 6px;
+    font-size: 13px;
+    box-shadow: none;
+  }
+  @media (min-width: 720px) { .sticky-cta { display: none; } }
+  body { padding-bottom: 82px; }
+  @media (min-width: 720px) { body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<!-- ============ COUNTDOWN BAR ============ -->
+<div class="countdown-bar" id="countdown-bar">
+  <div class="countdown-msg">
+    <span class="pulse"></span><span id="cd-headline">One Week Left &nbsp;—&nbsp; Registration Closes July 15</span>
+  </div>
+  <div class="countdown-timer" id="countdown-timer" aria-live="polite">
+    <div class="countdown-unit"><div class="countdown-num" id="cd-days">—</div><div class="countdown-label">Days</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-hours">—</div><div class="countdown-label">Hours</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-mins">—</div><div class="countdown-label">Mins</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-secs">—</div><div class="countdown-label">Secs</div></div>
+  </div>
+  <div class="countdown-tagline" id="cd-tagline">
+    Until sign-ups close &nbsp;•&nbsp; <strong>Lock in your team now</strong>
+  </div>
+  <div class="countdown-closed">
+    <div class="badge">Registration Closed</div>
+    <div class="msg">Late spots? Contact <a href="tel:+16163409922">Travis at 616-340-9922</a> or <a href="mailto:hollandwave@gmail.com">hollandwave@gmail.com</a></div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="kicker">Holland</div>
+  <div class="lockup">
+    <img src="wave_lockup.png" alt="Holland Wave — Homeschool Basketball" />
+  </div>
+
+  <span class="eyebrow-pill">2026 Annual Fundraiser</span>
+  <div class="event-meta">Thu Aug 27, 2026 &nbsp;•&nbsp; Pigeon Creek Golf Course &nbsp;•&nbsp; West Olive, MI</div>
+
+  <h1 class="display h1">Swing<br>for the <span class="gold">Wave</span></h1>
+  <div class="h-sub">Homeschool Basketball — Boys &amp; Girls</div>
+  <div class="scripture">All to the glory of God.</div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener">
+      Register Your Foursome
+      <small>$400 / team — limited to 30 teams</small>
+    </a>
+    <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener">
+      Become a Sponsor
+      <small>Tiers from $250 — $2,000</small>
+    </a>
+  </div>
+
+  <div class="urgency-pill">⛳ Limited to 30 Teams — Lock Yours In</div>
+</header>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-label">Date</div>
+    <div class="stat-val">THU AUG 27</div>
+    <div class="stat-sub">Tee off 8:30 AM</div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Format</div>
+    <div class="stat-val">4-Person</div>
+    <div class="stat-sub">Scramble</div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Price</div>
+    <div class="stat-val green">$400 / Team</div>
+    <div class="stat-sub">or $100 / golfer</div>
+  </div>
+</div>
+
+<!-- ============ INCLUDES ============ -->
+<section class="section">
+  <div class="includes">
+    <h3>Your Day Includes</h3>
+    <div class="includes-title">A great day on the course</div>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-icon">⛳</div>
+        <div class="include-label">18 Holes + Cart</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🍔</div>
+        <div class="include-label">Lunch Included</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🏆</div>
+        <div class="include-label">Hole Contests</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🎁</div>
+        <div class="include-label">Raffle Prizes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WE PLAY ============ -->
+<section class="section section-tight">
+  <div class="why">
+    <h3>Why We Play</h3>
+    <div class="display why-title">Building the next generation</div>
+    <p>Holland Wave has served West Michigan homeschool families for 10+ years, giving Christian homeschool students a place to grow as athletes, teammates, and disciples.</p>
+    <p>Boys teams have run since 2014, and we're bringing girls basketball back for the 2026 season. Every dollar raised lowers athlete fees and funds coaches, uniforms, and tournament travel.</p>
+    <p><strong>This one day funds a full year of homeschool basketball for boys and girls.</strong></p>
+  </div>
+</section>
+
+<!-- ============ SPONSOR ============ -->
+<section class="section" id="sponsor">
+  <h2>Partner with the <span class="gold">Wave</span></h2>
+  <p class="section-lede">Reach hundreds of West Michigan families and support Christian character through sport. Sponsorships are 501(c)(3) tax-deductible.</p>
+
+  <div class="presented">
+    <div class="presented-eyebrow">Event Sponsor — Presented By</div>
+    <div class="presented-name">Gordon and Prince Family Dentistry</div>
+  </div>
+
+  <div class="tiers">
+    <div class="tier">
+      <div>
+        <div class="tier-name">Cart Sponsor</div>
+        <div class="tier-desc">Logo on all 36 carts • Top billing</div>
+      </div>
+      <div class="tier-price">$2,000</div>
+    </div>
+    <div class="tier">
+      <div>
+        <div class="tier-name">Lunch Sponsor</div>
+        <div class="tier-desc">Signage at lunch • Recognition from podium</div>
+      </div>
+      <div class="tier-price">$1,000</div>
+    </div>
+    <div class="tier">
+      <div>
+        <div class="tier-name">Beverage Cart</div>
+        <div class="tier-desc">Logo on beverage cart • Day-of mentions</div>
+      </div>
+      <div class="tier-price">$500</div>
+    </div>
+    <div class="tier">
+      <div>
+        <div class="tier-name">Putting Green</div>
+        <div class="tier-desc">Signage at putting green contest</div>
+      </div>
+      <div class="tier-price">$500</div>
+    </div>
+    <div class="tier">
+      <div>
+        <div class="tier-name">Hole Sponsor</div>
+        <div class="tier-desc">Sign at tee box • Listed on event materials</div>
+      </div>
+      <div class="tier-price">$250</div>
+    </div>
+  </div>
+
+  <p class="tax-line">501(c)(3) — sponsorships are tax-deductible to the fullest extent allowed by law.</p>
+
+  <div style="text-align:center; margin-top: 32px;">
+    <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener" style="display:inline-block; padding: 18px 40px;">
+      Become a Sponsor
+      <small>Limited Tiers — Act Now</small>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <h2>Ready to Play?</h2>
+  <p>Lock in your foursome today. Only 30 teams — first come, first served.</p>
+  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener" style="display:inline-block; padding: 20px 44px; font-size: 19px;">
+    Register Your Foursome
+  </a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="contact-row">
+    <strong>Questions?</strong> Travis Ernst &nbsp;•&nbsp;
+    <a href="tel:+16163409922">616-340-9922</a> &nbsp;•&nbsp;
+    <a href="mailto:hollandwave@gmail.com">hollandwave@gmail.com</a>
+  </div>
+  <div>
+    <a href="https://www.hollandwave.com" target="_blank" rel="noopener"><strong>hollandwave.com</strong></a>
+    &nbsp;•&nbsp; Serving homeschool families since 2014
+  </div>
+  <div style="margin-top: 16px; opacity: 0.55; font-size: 12px;">
+    © 2026 Holland Wave Homeschool Basketball. All to the glory of God.
+  </div>
+</footer>
+
+<!-- ============ COUNTDOWN SCRIPT (auto two-phase) ============ -->
+<script>
+(function() {
+  // Two-phase countdown that switches automatically based on current time.
+  //
+  // Phase 1: NOW  → Jul 15, 2026 11:59:59 PM ET  — "One Week Left" push
+  // Phase 2: Jul 16 → Jul 27, 2026 11:59:59 PM ET — "Time Extended" final deadline
+  // Phase 3: after Jul 27 — registration closed
+  //
+  // Michigan uses EDT (UTC-4) in summer, so both target dates use -04:00.
+  var phase1End = new Date('2026-07-15T23:59:59-04:00').getTime();
+  var phase2End = new Date('2026-07-27T23:59:59-04:00').getTime();
+
+  var els = {
+    days:      document.getElementById('cd-days'),
+    hours:     document.getElementById('cd-hours'),
+    mins:      document.getElementById('cd-mins'),
+    secs:      document.getElementById('cd-secs'),
+    headline:  document.getElementById('cd-headline'),
+    tagline:   document.getElementById('cd-tagline')
+  };
+  var body = document.body;
+
+  var PHASE1_HEADLINE = 'One Week Left &nbsp;—&nbsp; Registration Closes July 15';
+  var PHASE1_TAGLINE  = 'Until sign-ups close &nbsp;•&nbsp; <strong>Lock in your team now<\/strong>';
+
+  var PHASE2_HEADLINE = '⏰ Time Extended &nbsp;—&nbsp; Final Deadline July 27';
+  var PHASE2_TAGLINE  = 'Extended by popular demand &nbsp;•&nbsp; <strong>Last chance to lock in your team<\/strong>';
+
+  var currentPhase = 0;
+
+  function setPhase(newPhase) {
+    if (newPhase === currentPhase) return;
+    currentPhase = newPhase;
+    if (newPhase === 1) {
+      els.headline.innerHTML = PHASE1_HEADLINE;
+      els.tagline.innerHTML  = PHASE1_TAGLINE;
+    } else if (newPhase === 2) {
+      els.headline.innerHTML = PHASE2_HEADLINE;
+      els.tagline.innerHTML  = PHASE2_TAGLINE;
+    }
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tick() {
+    var now = Date.now();
+    var target;
+
+    if (now < phase1End) {
+      setPhase(1);
+      target = phase1End;
+    } else if (now < phase2End) {
+      setPhase(2);
+      target = phase2End;
+    } else {
+      body.classList.add('deadline-passed');
+      return false;
+    }
+
+    var diff = target - now;
+    var days  = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins  = Math.floor((diff % 3600000) / 60000);
+    var secs  = Math.floor((diff % 60000) / 1000);
+    els.days.textContent  = pad(days);
+    els.hours.textContent = pad(hours);
+    els.mins.textContent  = pad(mins);
+    els.secs.textContent  = pad(secs);
+    return true;
+  }
+
+  if (tick()) {
+    setInterval(function() { tick(); }, 1000);
+  }
+})();
+</script>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener">Register</a>
+  <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener">Sponsor</a>
+</div>
+
+</body>
+</html>
