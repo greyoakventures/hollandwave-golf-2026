@@ -1,0 +1,4 @@
+Contact: mailto:hollandwave@gmail.com
+Expires: 2027-07-09T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://greyoakventures.github.io/hollandwave-golf-2026/.well-known/security.txt
