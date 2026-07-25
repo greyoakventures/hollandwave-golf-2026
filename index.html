@@ -709,7 +709,7 @@
 <!-- ============ COUNTDOWN BAR ============ -->
 <div class="countdown-bar" id="countdown-bar">
   <div class="countdown-msg">
-    <span class="pulse"></span><span id="cd-headline">One Week Left &nbsp;—&nbsp; Registration Closes July 15</span>
+    <span class="pulse"></span><span id="cd-headline">Final Days — Registration Closes July 31</span>
   </div>
   <div class="countdown-timer" id="countdown-timer" aria-live="polite">
     <div class="countdown-unit"><div class="countdown-num" id="cd-days">—</div><div class="countdown-label">Days</div></div>
@@ -915,18 +915,12 @@
   </div>
 </footer>
 
-<!-- ============ COUNTDOWN SCRIPT (auto two-phase) ============ -->
+<!-- ============ COUNTDOWN SCRIPT ============ -->
 <script>
 (function() {
-  // Two-phase countdown that switches automatically based on current time.
-  //
-  // Phase 1: NOW  → Jul 15, 2026 11:59:59 PM ET  — "One Week Left" push
-  // Phase 2: Jul 16 → Jul 27, 2026 11:59:59 PM ET — "Time Extended" final deadline
-  // Phase 3: after Jul 27 — registration closed
-  //
-  // Michigan uses EDT (UTC-4) in summer, so both target dates use -04:00.
-  var phase1End = new Date('2026-07-15T23:59:59-04:00').getTime();
-  var phase2End = new Date('2026-07-27T23:59:59-04:00').getTime();
+  // Single-phase countdown to the very end of July 31, 2026 in Michigan time (EDT = UTC-4).
+  // After the deadline passes, the timer hides and the "Registration Closed" panel appears.
+  var deadline = new Date('2026-07-31T23:59:59-04:00').getTime();
 
   var els = {
     days:      document.getElementById('cd-days'),
@@ -938,42 +932,29 @@
   };
   var body = document.body;
 
-  var PHASE1_HEADLINE = 'One Week Left &nbsp;—&nbsp; Registration Closes July 15';
-  var PHASE1_TAGLINE  = 'Until sign-ups close &nbsp;•&nbsp; <strong>Lock in your team now<\/strong>';
+  var HEADLINE = 'Final Days &nbsp;—&nbsp; Registration Closes July 31';
+  var TAGLINE  = 'Until sign-ups close &nbsp;•&nbsp; <strong>Lock in your team now<\/strong>';
 
-  var PHASE2_HEADLINE = '⏰ Time Extended &nbsp;—&nbsp; Final Deadline July 27';
-  var PHASE2_TAGLINE  = 'Extended by popular demand &nbsp;•&nbsp; <strong>Last chance to lock in your team<\/strong>';
-
-  var currentPhase = 0;
-
-  function setPhase(newPhase) {
-    if (newPhase === currentPhase) return;
-    currentPhase = newPhase;
-    if (newPhase === 1) {
-      els.headline.innerHTML = PHASE1_HEADLINE;
-      els.tagline.innerHTML  = PHASE1_TAGLINE;
-    } else if (newPhase === 2) {
-      els.headline.innerHTML = PHASE2_HEADLINE;
-      els.tagline.innerHTML  = PHASE2_TAGLINE;
-    }
+  var initialized = false;
+  function initCopy() {
+    if (initialized) return;
+    initialized = true;
+    els.headline.innerHTML = HEADLINE;
+    els.tagline.innerHTML  = TAGLINE;
   }
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   function tick() {
     var now = Date.now();
-    var target;
 
-    if (now < phase1End) {
-      setPhase(1);
-      target = phase1End;
-    } else if (now < phase2End) {
-      setPhase(2);
-      target = phase2End;
-    } else {
+    if (now >= deadline) {
       body.classList.add('deadline-passed');
       return false;
     }
+
+    initCopy();
+    var target = deadline;
 
     var diff = target - now;
     var days  = Math.floor(diff / 86400000);
