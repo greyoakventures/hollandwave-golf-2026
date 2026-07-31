@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Holland Wave Golf Outing 2026 — Aug 27 at Pigeon Creek</title>
-<meta name="description" content="Join Holland Wave's 2026 golf fundraiser on Thursday, August 27 at Pigeon Creek Golf Course. Support homeschool basketball — boys and girls. Register your foursome or become a sponsor." />
+<title>2026 Holland Wave Golf Outing — CANCELED</title>
+<meta name="description" content="The 2026 Holland Wave Golf Outing has been canceled. We did not meet the minimum team commitments by our July 31, 2026 deadline. We plan to bring the outing back in 2027 — thank you for your support of Holland Wave homeschool basketball." />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://greyoakventures.github.io/hollandwave-golf-2026/" />
-<meta property="og:title" content="Holland Wave Golf Outing 2026 — Aug 27 at Pigeon Creek" />
-<meta property="og:description" content="Join our 2026 golf fundraiser at Pigeon Creek Golf Course. 4-person scramble, $400/team. Supporting Holland Wave homeschool basketball — boys and girls." />
+<meta property="og:title" content="2026 Holland Wave Golf Outing — CANCELED" />
+<meta property="og:description" content="The 2026 Holland Wave Golf Outing has been canceled. We plan to bring it back in 2027 — thank you for your continued support." />
 <meta property="og:image" content="https://greyoakventures.github.io/hollandwave-golf-2026/og-image.jpg" />
 <meta property="og:image:secure_url" content="https://greyoakventures.github.io/hollandwave-golf-2026/og-image.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -50,7 +50,7 @@
       "name": "Holland Wave Golf Outing 2026 \u2014 Swing for the Wave",
       "startDate": "2026-08-27T08:30:00-04:00",
       "endDate": "2026-08-27T15:00:00-04:00",
-      "eventStatus": "https://schema.org/EventScheduled",
+      "eventStatus": "https://schema.org/EventCancelled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
@@ -74,7 +74,7 @@
         "@type": "Offer",
         "price": "400",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/SoldOut",
         "url": "https://greyoakventures.github.io/hollandwave-golf-2026/"
       }
     }
@@ -82,8 +82,8 @@
 }
 </script>
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Holland Wave Golf Outing 2026 — Aug 27" />
-<meta name="twitter:description" content="Join our 2026 golf fundraiser at Pigeon Creek. 4-person scramble, $400/team. Supporting homeschool basketball." />
+<meta name="twitter:title" content="2026 Holland Wave Golf Outing — CANCELED" />
+<meta name="twitter:description" content="The 2026 Holland Wave Golf Outing has been canceled. We plan to return in 2027." />
 <meta name="twitter:image" content="https://greyoakventures.github.io/hollandwave-golf-2026/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -706,53 +706,197 @@
 </head>
 <body>
 
-<!-- ============ COUNTDOWN BAR ============ -->
-<div class="countdown-bar" id="countdown-bar">
-  <div class="countdown-msg">
-    <span class="pulse"></span><span id="cd-headline">Final Days — Registration Closes July 31</span>
-  </div>
-  <div class="countdown-timer" id="countdown-timer" aria-live="polite">
-    <div class="countdown-unit"><div class="countdown-num" id="cd-days">—</div><div class="countdown-label">Days</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-hours">—</div><div class="countdown-label">Hours</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-mins">—</div><div class="countdown-label">Mins</div></div>
-    <div class="countdown-unit"><div class="countdown-num" id="cd-secs">—</div><div class="countdown-label">Secs</div></div>
-  </div>
-  <div class="countdown-tagline" id="cd-tagline">
-    Until sign-ups close &nbsp;•&nbsp; <strong>Lock in your team now</strong>
-  </div>
-  <div class="countdown-closed">
-    <div class="badge">Registration Closed</div>
-    <div class="msg">Late spots? Contact <a href="tel:+16163409922">Travis at 616-340-9922</a> or <a href="mailto:hollandwave@gmail.com">hollandwave@gmail.com</a></div>
+<!-- ============ CANCELLATION BANNER ============ -->
+<style>
+  .cancel-bar {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2b1a04 100%);
+    color: #fff;
+    padding: 22px 20px 24px;
+    text-align: center;
+    border-top: 6px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+  }
+  .cancel-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .cancel-title {
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 640px) { .cancel-title { font-size: 40px; } }
+  .cancel-sub {
+    font-size: 14px;
+    color: #e0d3b8;
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 500;
+  }
+  .cancel-sub strong { color: var(--gold); }
+
+  .cancel-notice {
+    background: var(--cream);
+    padding: 48px 20px 56px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .cancel-notice-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--hair);
+    border-top: 6px solid var(--gold);
+    border-radius: 14px;
+    padding: 36px 28px;
+    box-shadow: 0 6px 24px rgba(14, 58, 102, 0.08);
+  }
+  @media (min-width: 640px) { .cancel-notice-inner { padding: 44px 44px; } }
+  .cancel-notice .stamp {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #a02020;
+    border: 2px solid #a02020;
+    border-radius: 4px;
+    padding: 5px 10px 4px;
+    margin-bottom: 18px;
+  }
+  .cancel-notice h2 {
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+  }
+  @media (min-width: 640px) { .cancel-notice h2 { font-size: 36px; } }
+  .cancel-notice p {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+  .cancel-notice p.lede { font-size: 17px; }
+  .cancel-notice .divider {
+    height: 1px;
+    background: var(--hair);
+    margin: 22px 0;
+  }
+  .cancel-notice .sig {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 18px;
+  }
+  .cancel-notice .contact-line {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--ink);
+    margin-top: 18px;
+  }
+  .cancel-notice .contact-line a { font-weight: 700; text-decoration: none; }
+  .cancel-notice .contact-line a:hover { text-decoration: underline; }
+
+  .btn.disabled {
+    pointer-events: none;
+    opacity: 0.45;
+    filter: grayscale(0.6);
+    cursor: not-allowed;
+    position: relative;
+  }
+  .btn.disabled::after {
+    content: 'CANCELED';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    background: #a02020;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: 800;
+  }
+
+  .hero.canceled { filter: saturate(0.55) brightness(0.9); }
+  .hero.canceled .eyebrow-pill {
+    background: #a02020 !important;
+    color: #fff !important;
+    letter-spacing: 0.18em;
+  }
+  .hero.canceled .event-meta {
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.55);
+    opacity: 0.75;
+  }
+  .hero.canceled h1.display,
+  .hero.canceled .h-sub,
+  .hero.canceled .scripture { opacity: 0.85; }
+</style>
+<div class="cancel-bar" role="alert" aria-live="polite">
+  <div class="cancel-eyebrow">Important Announcement</div>
+  <div class="cancel-title">The 2026 Golf Outing<br>Has Been Canceled</div>
+  <div class="cancel-sub">
+    We did not reach the minimum team commitments by our <strong>July 31, 2026</strong> deadline. We’re grateful for everyone who signed up or considered joining — and we’re already planning to bring the outing back in <strong>2027</strong>.
   </div>
 </div>
 
-<!-- ============ HERO ============ -->
-<header class="hero">
+<!-- ============ HERO (canceled state) ============ -->
+<header class="hero canceled" aria-label="Canceled 2026 event details">
   <div class="kicker">Holland</div>
   <div class="lockup">
     <img src="wave_lockup.png" alt="Holland Wave — Homeschool Basketball" />
   </div>
 
-  <span class="eyebrow-pill">2026 Annual Fundraiser</span>
-  <div class="event-meta">Thu Aug 27, 2026 &nbsp;•&nbsp; Pigeon Creek Golf Course &nbsp;•&nbsp; West Olive, MI</div>
+  <span class="eyebrow-pill">2026 Fundraiser — Canceled</span>
+  <div class="event-meta" aria-label="Originally planned date, now canceled">Was: Thu Aug 27, 2026 &nbsp;•&nbsp; Pigeon Creek Golf Course &nbsp;•&nbsp; West Olive, MI</div>
 
   <h1 class="display h1">Swing<br>for the <span class="gold">Wave</span></h1>
   <div class="h-sub">Homeschool Basketball — Boys &amp; Girls</div>
   <div class="scripture">All to the glory of God.</div>
 
   <div class="cta-row">
-    <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener">
-      Register Your Foursome
-      <small>$400 / team — limited to 30 teams</small>
+    <a class="btn btn-gold disabled" aria-disabled="true" tabindex="-1">
+      Registration Closed
+      <small>2026 outing canceled — see below</small>
     </a>
-    <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener">
-      Become a Sponsor
-      <small>Tiers from $250 — $2,000</small>
+    <a class="btn btn-outline disabled" aria-disabled="true" tabindex="-1">
+      Sponsorships Paused
+      <small>Thank you — we’ll return in 2027</small>
     </a>
   </div>
 
-  <div class="urgency-pill">⛳ Limited to 30 Teams — Lock Yours In</div>
+  <div class="urgency-pill" style="background: rgba(255,255,255,0.12); color: #fff;">2026 event canceled — see full notice below</div>
 </header>
+
+<!-- ============ CANCELLATION NOTICE ============ -->
+<section class="cancel-notice" id="notice">
+  <div class="cancel-notice-inner">
+    <div class="stamp">Event Canceled</div>
+    <h2>Thank You — See You in 2027</h2>
+    <p class="lede">As of <strong>Friday, July 31, 2026</strong>, our team-registration deadline has passed and we did not reach the minimum number of teams required to run this year’s outing. After a lot of prayer and conversation with the committee, we’ve made the difficult decision to <strong>cancel the 2026 Holland Wave Golf Outing</strong>.</p>
+    <p>We know a lot of people were pulling for this event — golfers, sponsors, families, and volunteers alike. To everyone who committed early, promoted it in your circles, or was praying about joining: <strong>thank you</strong>. Your support means more to this program than a single fundraising day.</p>
+    <div class="divider"></div>
+    <p><strong>What happens next:</strong> Any golfers or sponsors who have already paid will be contacted directly by the committee about refunds. If you’ve already sent in a check or online payment and don’t hear from us within the next two weeks, please reach out using the info below.</p>
+    <p><strong>Looking ahead:</strong> We are already working to bring the golf outing back in <strong>2027</strong> — with more lead time, earlier sponsor outreach, and a stronger push in the homeschool community. If you’d like to be on the early-notice list for next year, just email us and we’ll add you.</p>
+    <p>Holland Wave homeschool basketball — boys and girls — continues on. Please keep our players, coaches, and families in your prayers as we head into the 2026–27 season.</p>
+    <div class="contact-line">
+      <strong>Questions or want to be on the 2027 list?</strong><br>
+      Travis Ernst — <a href="tel:+16163409922">616-340-9922</a> &nbsp;•&nbsp; <a href="mailto:hollandwave@gmail.com">hollandwave@gmail.com</a>
+    </div>
+    <div class="sig">— The Holland Wave Golf Outing Committee</div>
+  </div>
+</section>
 
 <!-- ============ STATS ============ -->
 <div class="stats">
@@ -883,19 +1027,19 @@
   <p class="tax-line">501(c)(3) — sponsorships are tax-deductible to the fullest extent allowed by law.</p>
 
   <div style="text-align:center; margin-top: 32px;">
-    <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener" style="display:inline-block; padding: 18px 40px;">
-      Become a Sponsor
-      <small>Limited Tiers — Act Now</small>
+    <a class="btn btn-green disabled" aria-disabled="true" tabindex="-1" style="display:inline-block; padding: 18px 40px;">
+      Sponsorships Closed for 2026
+      <small>Thank you — we’ll be back in 2027</small>
     </a>
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
+<!-- ============ FINAL CTA (repurposed for cancellation) ============ -->
 <section class="final-cta">
-  <h2>Ready to Play?</h2>
-  <p>Lock in your foursome today. Only 30 teams — first come, first served.</p>
-  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener" style="display:inline-block; padding: 20px 44px; font-size: 19px;">
-    Register Your Foursome
+  <h2>See You in 2027</h2>
+  <p>The 2026 outing is canceled, but the Wave keeps rolling. Email us to join the early-notice list for next year’s outing.</p>
+  <a class="btn btn-gold" href="mailto:hollandwave@gmail.com?subject=Add%20me%20to%20the%202027%20Golf%20Outing%20list" style="display:inline-block; padding: 20px 44px; font-size: 19px;">
+    Email Us for 2027 Updates
   </a>
 </section>
 
@@ -974,11 +1118,8 @@
 })();
 </script>
 
-<!-- ============ STICKY MOBILE CTA ============ -->
-<div class="sticky-cta">
-  <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLScdTgHJRkp_cc9Ul9I08qCHl99U9TeNxzYiR3vC3YefnZfF0g/viewform" target="_blank" rel="noopener">Register</a>
-  <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSfk3siwRWZGmlc4hpmxbf464yyghJXa0l29flG1dbiSc1V9zg/viewform" target="_blank" rel="noopener">Sponsor</a>
-</div>
+<!-- Sticky mobile CTA removed — event canceled -->
+<style>body { padding-bottom: 0 !important; } .sticky-cta { display: none !important; }</style>
 
 </body>
 </html>
